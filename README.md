@@ -329,7 +329,3 @@ Añade las siguientes funcionalidades:
 ## Añade nuevas funcionalidades a `uHashSet.pas` y `uHashMap.pas`
 
 Añade las funcionalidades definidas para el conjunto `uMiConjunto.pas` a las unidades `uHashSet.pas` y `uHashMap.pas`.
-
-## Implementación de conjuntos genéricos
-
-Implementa conjuntos genéricos en Pascal. Para ello, usa la unidad `uTElemento.pas` que contiene la definición de un tipo de dato genérico. Deberás modificar las unidades `uMiConjunto.pas`, `uHashSet.pas` y `uHashMap.pas` para que trabajen con este tipo de dato genérico.
