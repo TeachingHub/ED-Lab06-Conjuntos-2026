@@ -1,4 +1,4 @@
-program conjuntos_ej1;
+program conjuntos_ej2;
 
 {
     Ejercicio 2.1: Diferencia simétrica de conjuntos.
