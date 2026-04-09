@@ -17,16 +17,15 @@
 - [¿Cómo enfrentarse a los ejercicios?](#%C2%BFc%C3%B3mo-enfrentarse-a-los-ejercicios)
 - [Ejercicio 1: Introducción a Conjuntos en Pascal](#ejercicio-1-introducci%C3%B3n-a-conjuntos-en-pascal)
 - [Ejercicio 2: Operaciones básicas con conjuntos](#ejercicio-2-operaciones-b%C3%A1sicas-con-conjuntos)
-- [Ejercicio 3: Parte 1: Conjuntos a través de Listas](#ejercicio-3-parte-1-conjuntos-a-trav%C3%A9s-de-listas)
-- [Ejercicio 3: Parte 2: Bolsas a través de Listas](#ejercicio-3-parte-2-bolsas-a-trav%C3%A9s-de-listas)
-- [Ejercicio 4: Introducción a Conjuntos a través de Arrays y con función Hash](#ejercicio-4-introducci%C3%B3n-a-conjuntos-a-trav%C3%A9s-de-arrays-y-con-funci%C3%B3n-hash)
-- [Ejercicio 5: Creando un HashMap: Clave - Valor Opcional](#ejercicio-5-creando-un-hashmap-clave---valor-opcional)
-- [Ejercicio 6: Aplicación Práctica de Conjuntos - El bingo](#ejercicio-6-aplicaci%C3%B3n-pr%C3%A1ctica-de-conjuntos---el-bingo)
+- [Ejercicio 3: Parte 1: Conjuntos implementados internamente con Listas](#ejercicio-3-parte-1-conjuntos-implementados-internamente-con-listas)
+- [Ejercicio 3: Parte 2: Bolsas implementadas internamente con  Listas](#ejercicio-3-parte-2-bolsas-implementadas-internamente-con--listas)
+- [Ejercicio 4: Introducción a la implementación de Conjuntos mediante Tablas Hash array + función Hash](#ejercicio-4-introducci%C3%B3n-a-la-implementaci%C3%B3n-de-conjuntos-mediante-tablas-hash-array--funci%C3%B3n-hash)
+- [Ejercicio 5: Creando un HashMap: Clave - Valor Ejercicio avanzado - Opcional pero recomendable para profundizar](#ejercicio-5-creando-un-hashmap-clave---valor-ejercicio-avanzado---opcional-pero-recomendable-para-profundizar)
+- [Ejercicio 6: Aplicación Práctica de Conjuntos - Bingo](#ejercicio-6-aplicaci%C3%B3n-pr%C3%A1ctica-de-conjuntos---bingo)
 - [Otros ejercicios propuestos](#otros-ejercicios-propuestos)
     - [Multiset](#multiset)
     - [Añade nuevas funcionalidades a uMiConjunto.pas](#a%C3%B1ade-nuevas-funcionalidades-a-umiconjuntopas)
     - [Añade nuevas funcionalidades a uHashSet.pas y uHashMap.pas](#a%C3%B1ade-nuevas-funcionalidades-a-uhashsetpas-y-uhashmappas)
-    - [Implementación de conjuntos genéricos](#implementaci%C3%B3n-de-conjuntos-gen%C3%A9ricos)
 
 <!-- /TOC -->
 
@@ -134,6 +133,8 @@ Diferencia de A y B: TRUE
 
 En este ejercicio vamos a crear un ConjuntoEnteros cuyo almacenamiento interno va a ser una lista enlazada simple. Para ello, deberás localizar los tres siguientes ficheros: 
 
+Recuerda que un conjunto es una colección **sin orden** de elementos no repetidos. En esta práctica, para fijar un criterio de implementación, vamos a suponer que la lista que representa internamente al conjunto inserta los nuevos elementos por el final (usando la operación de insertar al final de la lista).
+
 - `conjuntos_ej3.pas`: Programa principal que se utilizará para comprobar que has superado el ejercicio.
 - `uListaEnlazadaSimple.pas`: Unidad que contiene la definición de una lista enlazada simple. Esta unidad ya está implementada y no deberás modificarla.
 - `uMiConjunto.pas`: Unidad que deberás implementar. 
@@ -143,7 +144,7 @@ En este ejercicio vamos a crear un ConjuntoEnteros cuyo almacenamiento interno v
 Dentro de la unidad `uMiConjunto.pas` deberás implementar un TAD `ConjuntoEnteros` en Pascal utilizando los tipos y operaciones que ofrece el TAD Lista enlazada simple. Para ello, deberás implementar las siguientes funciones y procedimientos:
 
 - `procedure initialize(var c: tConjunto)`: Inicializa el conjunto. Esta función deberá inicializar la lista enlazada simple.
-- `procedure add(var c: tConjunto; x: integer)`: Añade un elemento al conjunto. Esta función deberá añadir un elemento a la lista enlazada simple si no está ya presente.
+- `procedure add(var c: tConjunto; x: integer)`: Añade un elemento al conjunto. Esta función deberá añadir un elemento a la lista enlazada simple si no está ya presente, insertándolo al final de la lista (`insert_at_end`).
 - `procedure remove(var c: tConjunto; x: integer)`: Elimina un elemento del conjunto. Esta función deberá eliminar un elemento de la lista enlazada simple si está presente.
 - `function contains(c: tConjunto; x: integer): boolean`: Comprueba si un elemento está en el conjunto. Esta función deberá devolver `true` si el elemento está en la lista enlazada simple y `false` en caso contrario.
 - `function is_empty(c: tConjunto): boolean`: Comprueba si el conjunto está vacío. Esta función deberá devolver `true` si la lista enlazada simple está vacía y `false` en caso contrario.
