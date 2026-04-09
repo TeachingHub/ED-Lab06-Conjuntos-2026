@@ -198,7 +198,7 @@ difference (un elemento común)                                          Sí
 
 A partir de la implementación del TAD ConjuntoEnteros mediante listas enlazadas simples, vamos a implementar un TAD `BolsaEnteros`. Recuerda que una bolsa es una colección desordenada de elementos en la que estos pueden repetirse.
 
-Utilzia la unidad `uMiConjunto.pas` que has implementado en el ejercicio anterior y úsala como base para implementar un TAD `BolsaEnteros` en lugar de un conjunto. Para ello, deberás duplicarla y renombrarla como `uMiBolsa.pas`. 
+Utiliza la unidad `uMiConjunto.pas` que has implementado en el ejercicio anterior y úsala como base para implementar un TAD `BolsaEnteros` en lugar de un conjunto. Para ello, deberás duplicarla y renombrarla como `uMiBolsa.pas`. 
 
 Unicamente deberás implementar las 5 operaciones básicas: 
 - Añadir un elemento (`add`)
@@ -208,6 +208,7 @@ Unicamente deberás implementar las 5 operaciones básicas:
 - Conocer el tamaño o número de elementos (`size`)
 - Inicializar/crear (`initialize`)
 
+En este ejercicio te va a ser necesario modificar la unidad `uListaEnlazadaSimple.pas` por lo que tendrás el rol de desarrollador y usuario de la misma. 
 
 # Ejercicio 4: Introducción a la implementación de Conjuntos mediante Tablas Hash (array + función Hash)
 
