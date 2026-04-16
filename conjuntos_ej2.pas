@@ -12,8 +12,16 @@ type
 
 
 procedure diferencia_simetrica_conjuntos(A, B: set_of_0_255; var C: set_of_0_255);
+var
+    i: integer;
+
 begin
-    { TODO: Implementa este ejercicio }
+    C := [];
+    for i := 0 to 255 do
+    begin
+        if (i in A) xor (i in B) then
+            C := C + [i];
+    end;
 end;
 
 
@@ -22,8 +30,18 @@ end;
     Por ejemplo, si A = [1, 2] y B = [1, 2, 3], entonces A es subconjunto de B.
 }
 function es_subconjunto(A, B: set_of_0_255): boolean;
+var
+    i: integer;
+    todos_en_B: boolean;
+
 begin
-    { TODO: Implementa este ejercicio }
+    todos_en_B := true;
+    for i := 0 to 255 do
+    begin
+        if (i in A) and not (i in B) then
+            todos_en_B := false;
+    end;
+    es_subconjunto := todos_en_B;
 end;
 
 
@@ -32,8 +50,16 @@ end;
     Por ejemplo, si A = [1, 2, 3] y B = [3, 4, 5], entonces la intersección de A y B es [3].
 }
 procedure interseccion_conjuntos(A, B: set_of_0_255; var C: set_of_0_255);
+var
+    i: integer;
+
 begin
-    { TODO: Implementa este ejercicio }
+    C := [];
+    for i := 0 to 255 do
+    begin
+        if (i in A) and (i in B) then
+            C := C + [i];
+    end;
 end;
 
 
@@ -41,8 +67,16 @@ end;
  Implementa un procedimiento que reciba dos conjuntos A y B y devuelva un conjunto C con la unión de ambos conjuntos.
     Por ejemplo, si A = [1, 2, 3] y B = [3, 4, 5], entonces la unión de A y B es [1, 2, 3, 4, 5].}
 procedure union_conjuntos(A, B: set_of_0_255; var C: set_of_0_255); 
+var
+    i: integer;
+
 begin
-    { TODO: Implementa este ejercicio }
+    C := [];
+    for i := 0 to 255 do
+    begin
+        if (i in A) or (i in B) then
+            C := C + [i];
+    end;
 end;
 
 
@@ -50,8 +84,16 @@ end;
     Implementa un procedimiento que reciba dos conjuntos A y B y devuelva un conjunto C con la diferencia de ambos conjuntos.
 }
 procedure diferencia_conjuntos(A, B: set_of_0_255; var C: set_of_0_255);
+var
+    i: integer;
+
 begin
-    { TODO: Implementa este ejercicio }
+    C := [];
+    for i := 0 to 255 do
+    begin
+        if (i in A) and not (i in B) then
+            C := C + [i];
+    end;
 end;
 
 

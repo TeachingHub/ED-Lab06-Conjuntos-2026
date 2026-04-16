@@ -18,9 +18,24 @@ end;
 }
 procedure generar_lista_sin_duplicados(var list, aux: tListaSimple);
 var
-
+    conjunto: set of 0..255;
+    x, i: integer;
 begin
-  // Implementa este ejercicio
+    initialize(aux);
+    conjunto := [];
+    for i:= 1 to num_elems(list) do
+    begin
+        x := first(list);
+        conjunto := conjunto + [x];
+        delete_at_begin(list);
+        insert_at_end(list, x);
+    end;
+    // recorremos todo el conjunto y lo insertamos en la lista auxiliar
+    for x := 0 to 255 do
+    begin
+        if x in conjunto then
+            insert_at_end(aux, x);
+    end;
 end;
 
 

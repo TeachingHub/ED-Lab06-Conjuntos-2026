@@ -14,7 +14,9 @@ var
     intento: string;
 
 
-{ Ejercicio 3.3.}
+// vamos a generar un histograma de colisiones, para ello, vamos a insertar las letras del abecedario en el hashset
+// y vamos a contar cuantas colisiones se producen, es decir, cuántas veces se intenta meter una letra el el hashset
+// y nos dice que ya existe, aunque no exista.
 procedure histograma_colisiones;
 var
     i, t: Integer;
@@ -25,6 +27,18 @@ begin
     // Inicializar el HashSet como vacío
     FillChar(histograma, SizeOf(histograma), 0);
     t := 0;
+
+    for letra := 'A' to 'Z' do
+    begin
+        i := hash_function(letra);
+        Inc(histograma[i]);
+    end;
+
+    for i := Low(histograma) to High(histograma) do
+    begin
+        WriteLn('Hash ', i, ': ', max(histograma[i]-1,0), ' colisiones');
+        t := t + max(histograma[i]-1,0);
+    end;
     WriteLn('Total de colisiones: ', t);
 end;
 
@@ -66,7 +80,7 @@ begin
 
 
     // Ejercicio 3.2. Busca una palabra que produzca una coliusión
-    intento := 'AAAA';
+    intento := 'URJC';
     WriteLn('''', intento, ''' tiene el hash ', hash_function(intento));
     add(my_hash_set, intento);
 
